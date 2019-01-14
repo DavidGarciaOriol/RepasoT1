@@ -1,11 +1,12 @@
-let liga1 = new Liga('Test1', 'Temp1');
-let liga2 = new Liga('Test2', 'Temp2');
-let liga3 = new Liga('Test3', 'Temp3');
+let liga1 = new Liga('League1', 'Temp1');
+let liga2 = new Liga('League2', 'Temp2');
+let liga3 = new Liga('League3', 'Temp3');
 
 let allLeagues = [];
 allLeagues.push(liga1);
 allLeagues.push(liga2);
 allLeagues.push(liga3);
+
 
 
 let equipo1 = new Equipo('Team1', 'City1');
@@ -19,6 +20,20 @@ let equipo6 = new Equipo('Team6', 'City6');
 let equipo7 = new Equipo('Team7', 'City7');
 let equipo8 = new Equipo('Team8', 'City8');
 let equipo9 = new Equipo('Team9', 'City9');
+
+let allTeams = [];
+allTeams.push(equipo1);
+allTeams.push(equipo1);
+allTeams.push(equipo1);
+
+allTeams.push(equipo1);
+allTeams.push(equipo1);
+allTeams.push(equipo1);
+
+allTeams.push(equipo1);
+allTeams.push(equipo1);
+allTeams.push(equipo1);
+
 
 
 let jugador1 = new Jugador('Name1');
@@ -51,6 +66,7 @@ let jugador17 = new Jugador('Name17');
 let jugador18 = new Jugador('Name18');
 
 
+
 liga1.addTeam(equipo1);
 liga1.addTeam(equipo2);
 liga1.addTeam(equipo3);
@@ -62,6 +78,7 @@ liga2.addTeam(equipo6);
 liga3.addTeam(equipo7);
 liga3.addTeam(equipo8);
 liga3.addTeam(equipo9);
+
 
 
 equipo1.addPlayer(jugador1);

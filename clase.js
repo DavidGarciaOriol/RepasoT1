@@ -42,7 +42,7 @@ class Liga{
         // this.equipos.forEach(function(x){
         //     resultado += `<li>${x.nombre}</li>`;
         // });
-        this.equipos.forEach(x => resultado += `<li> ${x.nombre}`);
+        this.equipos.forEach(x => resultado += `<li> ${x}`);
         resultado += '</ul>';
         return resultado;
     }
@@ -94,9 +94,15 @@ class Equipo{
 
 // to String
 
-    toString(){
-        
-    }
+toString(){
+    let salto = '<br>';
+    let resultado = `${this.nombre}${salto}`;
+    resultado += `${this.ciudad}${salto}`;
+    resultado += '<ul>';
+    this.jugadores.forEach(y => resultado += `<li> ${y.nombre}`);
+    resultado += '</ul>';
+    return resultado;
+}
 
 }
 

@@ -10,7 +10,7 @@ function crearInput(){
     return input;
 }
 
-function aplicarFiltro(){
+function aplicarFiltro(value){
 
     let div = document.createElement('div');
     let h1 = document.createElement('h1');
@@ -21,10 +21,11 @@ function aplicarFiltro(){
         liga.equipos.forEach(equipo => mostrarEquipo(equipo,div,value)
         )
     );
+    document.body.appendChild(div);
 }
 
 function mostrarEquipo(equipo,div,value){
-    if(equipo.nombre.upperCase().includes(value.upperCase())){
+    if(equipo.nombre.toUpperCase().includes(value.toUpperCase())){
         let div2 = document.createElement('div');
         div2.innerHTML = equipo.nombre;
         div.appendChild(div2);
@@ -73,13 +74,13 @@ document.addEventListener("DOMContentLoaded", function(event){
 
     let input = crearInput();
 
-    // input.addEventListener('change', function(event){
+    input.addEventListener('change', function(event){
 
-    //     let value = event.target.value;
-    //     value = value.trim();
-    //     aplicarFiltro(value);
+        let value = event.target.value;
+        value = value.trim();
+        aplicarFiltro(value);
 
-    // });
+    });
 
     input.addEventListener('blur', function(event){
         let value = event.target.value;

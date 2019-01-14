@@ -9,17 +9,17 @@ allLeagues.push(liga3);
 
 
 
-let equipo1 = new Equipo('Team1', 'City1');
-let equipo2 = new Equipo('Team2', 'City2');
-let equipo3 = new Equipo('Team3', 'City3');
+let equipo1 = new Equipo('TeamA', 'City1');
+let equipo2 = new Equipo('TeamB', 'City2');
+let equipo3 = new Equipo('TeamC', 'City3');
 
-let equipo4 = new Equipo('Team4', 'City4');
-let equipo5 = new Equipo('Team5', 'City5');
-let equipo6 = new Equipo('Team6', 'City6');
+let equipo4 = new Equipo('TeamD', 'City4');
+let equipo5 = new Equipo('TeamE', 'City5');
+let equipo6 = new Equipo('TeamF', 'City6');
 
-let equipo7 = new Equipo('Team7', 'City7');
-let equipo8 = new Equipo('Team8', 'City8');
-let equipo9 = new Equipo('Team9', 'City9');
+let equipo7 = new Equipo('TeamG', 'City7');
+let equipo8 = new Equipo('TeamH', 'City8');
+let equipo9 = new Equipo('TeamI', 'City9');
 
 let allTeams = [];
 allTeams.push(equipo1);

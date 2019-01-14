@@ -17,7 +17,7 @@ function aplicarFiltro(){
     h1.innerHTML = "Equipos Filtrados";
     div.appendChild(h1);
 
-    allLeagues.foreach(liga => 
+    allLeagues.forEach(liga => 
         liga.equipos.forEach(equipo => mostrarEquipo(equipo,div,value)
         )
     );
@@ -32,25 +32,54 @@ function mostrarEquipo(equipo,div,value){
 }
 
 function validarInput(input, value){
-    let regex = /^[A-ZÁÉÍÓÚ0-9]{5,}$/;
-    if(regex.test(value)){
-        input.style.border = '1px solid green';
+    let regex = /^[A-Za-z]+$/;
+    let regex2 = /^[A-Z]+$/;
+    let esCorrectoTodoLetras = regex.test(value);
+    let esCorrectoTodoMayus = regex2.test(value);
+    let esCorrectoTam = value.length >= 5;
+    let divConErrores = document.getElementById('divErroresInput');
+    if(divConErrores === null){
+        divConErrores = document.createElement('div');
+        divConErrores.id = 'DivErroresInput';
     } else{
-        input.style.border = '1px solid red';        
+        divConErrores.innerHTML = "";
     }
+
+    input.parentNode.insertBefore(divConErrores, input.nextSibling);
+
+    if(!esCorrectoTodoLetras){
+        let span = document.createElement('span');
+        span.innerHTML = 'Solo se permiten letras.';
+        divConErrores.appendChild(span);
+    } else if(!esCorrectoTodoMayus){
+        let span = document.createElement('span');
+        span.innerHTML = 'El nombre debe estar en Mayúsculas.';
+        divConErrores.appendChild(span);
+    } else if(!esCorrectoTam){
+        let span = document.createElement('span');
+        span.innerHTML = 'Deben introducirse 5 o más letras.';
+        divConErrores.appendChild(span);
+    }
+
+
+    // if(regex.test(value)){
+    //     input.style.border = '1px solid green';
+    // } else{
+    //     input.style.border = '1px solid red';        
+    // }
 }
 
 document.addEventListener("DOMContentLoaded", function(event){
 
     let input = crearInput();
 
-    input.addEventListener('change', function(event){
+    // input.addEventListener('change', function(event){
 
-        let value = event.target.value;
-        value = value.trim();
-        aplicarFiltro(value);
+    //     let value = event.target.value;
+    //     value = value.trim();
+    //     aplicarFiltro(value);
 
-    });
+    // });
 
     input.addEventListener('blur', function(event){
         let value = event.target.value;
